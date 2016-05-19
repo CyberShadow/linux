@@ -48,6 +48,8 @@ do_bootimg() {
 }
 
 flash_bootimg() {
+	adb shell su -c "reboot download" || true
+	sleep 3
 	heimdall flash --BOOT "$1" --verbose
 }
 
