@@ -31,10 +31,10 @@ mkbootimg_zimage() {
 	# 	--base "$(cat $BOOT/boot.img-base)" \
 	# 	--output $BOOT/boot.img
 
-	/home/vladimir/work/extern/android/my/boot/patcher/patch_bootimg \
+	patch_bootimg \
 		$BOOT/boot-old.img \
-		$BOOT/boot.img \
-		--kernel "$1"
+		--kernel "$1" \
+		--output $BOOT/boot.img
 
 	# stat $BOOT/boot.img
 }
